@@ -10,7 +10,7 @@ const App = () => {
 
   const [quotes, setQuotes] = useState('');
 
-  // fetch quotes api
+  // fetch quotes
   const getQuotes = () => {
     fetch('https://type.fit/api/quotes')
     .then(res => res.json())
@@ -39,7 +39,7 @@ const App = () => {
         <div className="button-wrapper">
           <button id="new-quote" onClick={getQuotes} style={{backgroundColor: color}} >New Quote</button>
           <div className="links">
-            <a id="tweet-quote" href={`https:twitter.com/intent/tweet?text=${quotes.text} ~ ${quotes.author}`} target='_blank' rel="noopener noreferrer">
+            <a target='_top' id="tweet-quote" href={`https://twitter.com/intent/tweet?text=${quotes.text} ~ ${quotes.author}`} rel="noopener noreferrer">
               <FontAwesomeIcon className="icons" icon={faTwitterSquare} style={{color: color}} />
             </a>
             <a id="fb-quote" href="https://fb.watch/l6VVh9owVb/" target='_blank' rel="noopener noreferrer">
